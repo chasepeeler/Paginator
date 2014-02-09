@@ -315,7 +315,7 @@ class Paginator implements IteratorAggregate
      */
     public function toArray()
     {
-        $navigation = [];
+        $navigation = array();
 
         if($this->totalPages){
             
@@ -373,13 +373,13 @@ class Paginator implements IteratorAggregate
      */
     private function buildPaginationModel($pageNumber, $label, $isCurrent = false, $isLabel = "page")
     {
-        return [
+        return array(
                     "page_number" => $pageNumber,
                     "label" => $label,
                     "url" => $this->parseTplUrl($pageNumber),
                     "is_current" => $isCurrent,
                     "is_{$isLabel}" => true // first, prev, next, last                   
-                ];
+        );
     }
     
     /**
